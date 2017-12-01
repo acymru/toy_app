@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.3.4'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -48,6 +48,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # added by pix below, above default on install
+  # guard stuff below, from https://mattbrictson.com/lightning-fast-sass-reloading-in-rails
+  gem 'guard', '>= 2.2.2', :require => false
+  gem 'guard-livereload',  :require => false
+  gem 'rack-livereload'
+  gem 'rb-fsevent',        :require => false
+  #  end guard
 end
 
 group :production do
